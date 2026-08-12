@@ -3,10 +3,11 @@ import typescriptLogo from './assets/typescript.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import { setupCounter } from './counter.ts'
+import { name, age } from './bases/01-types'
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 <section id="center">
-<h1> Holaaa Capooo !!</h1>
+<h1> Holaaa Capooo !! ${name} ${age}</h1>
   <div class="hero">
     <img src="${heroImg}" class="base" width="170" height="179">
     <img src="${typescriptLogo}" class="framework" alt="TypeScript logo"/>
