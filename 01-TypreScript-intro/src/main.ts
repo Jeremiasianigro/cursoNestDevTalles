@@ -1,9 +1,12 @@
+import { charmander } from './bases/03-classes'
 import './style.css'
 // import { pokemons } from './bases/02-objects.ts'
 // import { name, age } from './bases/01-types'
 
+charmander
+
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-<h1> Holaaa Capooo!!</h1>
+<h1> Holaaa Capooo!!${charmander.name} ${charmander.id}</h1>
 
 `
 
