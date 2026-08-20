@@ -1,5 +1,5 @@
 import type { Move, PokeapiResponse } from '../interfaces/pokeapi-response.interface';
-import { PokeApiAdapter, PokeApiFetchAdapter } from '../api/pokeApi.adapter';
+import { PokeApiAdapter, PokeApiFetchAdapter, type HttpAdapter } from '../api/pokeApi.adapter';
 
 
 export class Pokemon {
@@ -13,7 +13,7 @@ export class Pokemon {
         public name: string,
         // Todo: inyectar dependencias
 
-        private readonly http: PokeApiAdapter
+        private readonly http: HttpAdapter
 
     ) {}
 
