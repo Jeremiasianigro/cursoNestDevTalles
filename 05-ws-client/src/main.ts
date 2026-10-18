@@ -5,7 +5,8 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 
   </div>
       <h1>Websocket-client</h1>
-      <spam>offline</spam>
+      <span id="server-status">offline</span>
+
 
   </div>
 
