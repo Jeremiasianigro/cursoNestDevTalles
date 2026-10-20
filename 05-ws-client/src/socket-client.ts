@@ -18,6 +18,7 @@ const addListeners = (socket: Socket) => {
     const clientsUl = document.querySelector('#clients-ul')!;
     const messageForm  = document.querySelector<HTMLFormElement>('#message-form')!;
     const messageInput = document.querySelector<HTMLInputElement>('#message-input')!;
+    const messagesUl = document.querySelector<HTMLUListElement>('#messages-ul')!;
 
 
     socket.on('connect', ()=>{
@@ -48,6 +49,21 @@ const addListeners = (socket: Socket) => {
         message: messageInput.value
        });
        messageInput.value = '';
+
+    })
+
+    socket.on('message-from-server', (payload: {fullName: string, message: string}) =>{
+        
+        const newMessage = `
+        <li>
+            <strong>${payload.fullName}</strong>
+            <span>${payload.message}</span>
+        </li>
+        
+        `;
+        const li = document.createElement('li');
+        li.innerHTML = newMessage;
+        messagesUl.append(li)
 
     })
 
